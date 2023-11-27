@@ -47,13 +47,15 @@ hist_values = np.histogram(
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
-    # Get actual image file
     bytes_data = get_image_path(uploaded_file)
     st.image(bytes_data)
+    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+    opencv_image = cv2.imdecode(file_bytes, 1)
     # ReSize
-    item = cv2.resize(bytes_data,dsize=(224,224), interpolation=cv2.INTER_CUBIC)
+    resized = cv2.resize(opencv_image,dsize=(224,224), interpolation=cv2.INTER_CUBIC)
     # ReScale Values
-    item = item / 255
+    resized = resized / 255
+    st.image(resized)
 
 st.bar_chart(hist_values)
 
