@@ -41,7 +41,17 @@ selected_image = image_select("Label", ["https://raw.githubusercontent.com/fer-l
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15250.jpg",
                                         ])
 
-st.text(type(selected_image))
+st.write(selected_image)
+
+bytes_data = get_image_path(selected_image)
+file_bytes = np.asarray(bytearray(selected_image.read()))
+opencv_image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+opencv_image = cv2.cvtColor(opencv_image , cv2.COLOR_BGR2RGB)
+# ReSize
+resized = cv2.resize(opencv_image,dsize=(256,256), interpolation=cv2.INTER_CUBIC)
+# ReScale Values
+resized = resized / 255
+st.image(resized)
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
