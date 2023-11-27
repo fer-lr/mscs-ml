@@ -1,6 +1,8 @@
+from io import StringIO
 import streamlit as st
 import pandas as pd
 import numpy as np
+from streamlit_image_select import image_select
 
 st.title('Autoencode image denoiser')
 
@@ -31,6 +33,26 @@ st.write(data)
 
 hist_values = np.histogram(
     data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
+
+
+uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
+
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    st.write(stringio)
+
+    # To read file as string:
+    string_data = stringio.read()
+    st.write(string_data)
+
+    # Can be used wherever a "file-like" object is accepted:
+    dataframe = pd.read_csv(uploaded_file)
+    st.write(dataframe)
+
 
 st.bar_chart(hist_values)
 
