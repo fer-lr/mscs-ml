@@ -5,7 +5,7 @@ import numpy as np
 import os
 import cv2
 from streamlit_image_select import image_select
-import urllib
+import urllib.request
 
 
 
@@ -44,7 +44,7 @@ selected_image = image_select("Label", ["https://raw.githubusercontent.com/fer-l
 
 st.write(selected_image)
 
-req = urllib.urlopen('http://answers.opencv.org/upfiles/logo_2.png')
+req = urllib.request.urlopen('http://answers.opencv.org/upfiles/logo_2.png')
 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
 opencv_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
 opencv_image = cv2.cvtColor(opencv_image , cv2.COLOR_BGR2RGB)
