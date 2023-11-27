@@ -2,6 +2,17 @@ from io import StringIO
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
+import cv2
+
+def get_image_path(img):
+    # Create a directory and save the uploaded image.
+    file_path = f"data/uploadedImages/{img.name}"
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "wb") as img_file:
+        img_file.write(img.getbuffer())
+    return file_path
+
 
 st.title('Autoencode image denoiser')
 
@@ -36,11 +47,13 @@ hist_values = np.histogram(
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
-    bytes_data = uploaded_file.getvalue()
-    st.write(bytes_data)
-    st.image(uploaded_file)
-    st.text(type(bytes_data))
-
+    # Get actual image file
+    bytes_data = get_image_path(uploaded_file)
+    st.image(bytes_data)
+    # ReSize
+    item = cv2.resize(bytes_data,dsize=(224,224), interpolation=cv2.INTER_CUBIC)
+    # ReScale Values
+    item = item / 255
 
 st.bar_chart(hist_values)
 
