@@ -26,7 +26,7 @@ with st.sidebar:
 
 
 
-st.image("images/autoencoder_schema.jpg")
+st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
 
 DATE_COLUMN = 'date/time'
