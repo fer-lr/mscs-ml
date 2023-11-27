@@ -41,7 +41,7 @@ selected_image = image_select("Label", ["https://raw.githubusercontent.com/fer-l
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15250.jpg",
                                         ])
 
-st.write(type(selected_image))
+st.text(type(selected_image))
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
