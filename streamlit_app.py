@@ -49,7 +49,7 @@ uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
     bytes_data = get_image_path(uploaded_file)
     st.image(bytes_data)
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+    file_bytes = np.asarray(bytearray(uploaded_file.read()))
     st.image(bytes_data)
     opencv_image = cv2.imdecode(file_bytes, -1)
     # ReSize
