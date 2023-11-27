@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 import os
 import cv2
+from PIL import Image
+
 
 def get_image_path(img):
     # Create a directory and save the uploaded image.
@@ -57,6 +59,8 @@ if uploaded_file is not None:
     # ReScale Values
     resized = resized / 255
     st.image(resized)
+    im = Image.fromarray(file_bytes, np.uint8())
+    st.image(im)
 
 st.bar_chart(hist_values)
 
