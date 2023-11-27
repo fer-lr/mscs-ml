@@ -2,7 +2,6 @@ from io import StringIO
 import streamlit as st
 import pandas as pd
 import numpy as np
-from streamlit_image_select import image_select
 
 st.title('Autoencode image denoiser')
 
