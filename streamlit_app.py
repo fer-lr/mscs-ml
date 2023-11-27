@@ -46,7 +46,7 @@ st.title('Autoencode image denoiser')
 st.write("BRIEF DESCRIPTION")
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
-selected_image = image_select("Label", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
+selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15242.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15243.jpg",
@@ -59,11 +59,15 @@ selected_image = image_select("Label", ["https://raw.githubusercontent.com/fer-l
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15250.jpg",
                                         ])
 
+noise_density = st.slider('Noise density', 0, 1, 0.1)
+
 req = urllib.request.urlopen(selected_image)
 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
 selected_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
 selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
-noisy_image = sp_noise(selected_image, 0.1)
+noisy_image = sp_noise(selected_image, noise_density)
+
+
 
 col1, col2 = st.columns(2)
 
