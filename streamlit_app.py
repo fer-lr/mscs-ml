@@ -82,7 +82,7 @@ with col1:
 
 
 
-st.write(mse(selected_image, noisy_image))
+st.write(mse(selected_image, noisy_image)/100)
 
 
 
