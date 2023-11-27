@@ -24,6 +24,11 @@ st.title('Autoencode image denoiser')
 with st.sidebar:
     st.markdown("Hello world")
 
+
+
+st.image("images/autoencoder_schema.jpg")
+
+
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
          'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
