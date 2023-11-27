@@ -51,7 +51,7 @@ if uploaded_file is not None:
     st.image(bytes_data)
     file_bytes = np.asarray(bytearray(uploaded_file.read()))
     st.image(bytes_data)
-    opencv_image = cv2.imdecode(file_bytes, -1)
+    opencv_image = cv2.imdecode(file_bytes, cv2.COLOR_BGR2RGB)
     # ReSize
     resized = cv2.resize(opencv_image,dsize=(256,256), interpolation=cv2.INTER_CUBIC)
     # ReScale Values
