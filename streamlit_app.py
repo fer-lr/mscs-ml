@@ -4,7 +4,8 @@ import pandas as pd
 import numpy as np
 import os
 import cv2
-from PIL import Image
+from streamlit_image_select import image_select
+
 
 
 def get_image_path(img):
