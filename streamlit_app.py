@@ -59,7 +59,7 @@ if uploaded_file is not None:
     # ReScale Values
     resized = resized / 255
     st.image(resized)
-    im = Image.fromarray(file_bytes, np.uint8())
+    im = Image.fromarray(file_bytes)
     st.image(im)
 
 st.bar_chart(hist_values)
