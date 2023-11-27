@@ -36,6 +36,10 @@ def sp_noise(image,prob):
                 output[i][j] = image[i][j]
     return output
 
+def mse(imageA, imageB):
+    err = np.sum((imageA.astype("float") - imageB.astype("float")) ** 2)
+    err /= float(imageA.shape[0] * imageA.shape[1])
+
 st.title('Autoencode image denoiser')
 
 
@@ -74,6 +78,11 @@ col1, col2 = st.columns(2)
 with col1: 
     st.image(selected_image)
     st.image(noisy_image)
+
+
+
+st.write(mse(selected_image, noisy_image))
+
 
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
