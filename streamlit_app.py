@@ -59,7 +59,7 @@ selected_image = image_select("256x256 celebrity faces sample", ["https://raw.gi
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15250.jpg",
                                         ])
 
-noise_density = st.slider('Noise density', 0, 1, 0.1)
+noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
 
 req = urllib.request.urlopen(selected_image)
 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
@@ -70,7 +70,6 @@ noisy_image = sp_noise(selected_image, noise_density)
 
 
 col1, col2 = st.columns(2)
-
 with col1: 
     st.image(selected_image)
     st.image(noisy_image)
