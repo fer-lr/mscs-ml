@@ -36,8 +36,10 @@ hist_values = np.histogram(
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
     st.image(uploaded_file)
-    st.text(type(uploaded_file))
+    st.text(type(bytes_data))
 
 
 st.bar_chart(hist_values)
