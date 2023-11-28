@@ -119,7 +119,7 @@ with col1:
     st.write("Likeness:", '{:.4%}'.format(1 - mse_noisy_original))
 
 with col2:
-    st.subheader("Cleaned Image")
+    st.subheader("Processed Image")
     prediction = model.predict(noisy_imagee)
     st.image(prediction)
     mse_processed_original = mse(imageeee, prediction)/100
