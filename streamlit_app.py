@@ -79,7 +79,7 @@ req = urllib.request.urlopen(selected_image)
 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
 selected_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
 selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
-noisy_image = sp_noise(selected_image, noise_density)
+noisy_image = sp_noise(arr, noise_density)
 
 
 
