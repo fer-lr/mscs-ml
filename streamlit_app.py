@@ -93,11 +93,11 @@ noisy_image = noisy_image[None,...]
 st.write(selected_image.shape, noisy_image.shape)
 
 
-images = []
-
 imageeee = np.asarray(Image.open('images/picker/15240.jpg'))
+imageeee = imageeee[None,...]
+
 imageeee = imageeee / 255.0
-noisy_imagee = sp_noise(imageeee,noise_density)
+noisy_imagee = np.asarray(sp_noise(imageeee,noise_density))
 noisy_imagee = noisy_imagee / 255.0
 noisy_imagee = noisy_imagee[None,...]
 
