@@ -120,7 +120,7 @@ with col1:
     st.image(noisy_imagee)
     if stats_for_nerds:
         st.write(noisy_imagee.shape)
-        st.write(f"Noisy vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
+        st.write("Noisy vs. Original MSE:", mse(imageeee, noisy_imagee)/100)
 
 with col2:
     st.subheader("Cleaned Image")
