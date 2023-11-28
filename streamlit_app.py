@@ -197,9 +197,8 @@ with col6:
     st.write((601, 256, 256, 3))
     st.caption("Noise level")
     st.write(0.1)
+    st.write("[3]")
 
-
-st.write("[3]")
 st.image(image="images/content/clean_sample.png", caption="Clean Train Sample")
 st.image(image="images/content/noisy_sample.png", caption="Noisy Train Sample")
 st.divider()
