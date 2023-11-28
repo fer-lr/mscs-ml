@@ -80,6 +80,8 @@ model = load_model("model/model_1500_400.keras")
 
 #pickled_model = pickle.load(open('model/model_1500_400.pkl', 'rb'))
 
+st.header("Interactive Demo")
+
 selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15242.jpg",
@@ -96,29 +98,15 @@ selected_image = image_select("256x256 celebrity faces sample", ["https://raw.gi
 
 noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
 
-# req = urllib.request.urlopen(selected_image)
-# arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
-# selected_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
-# selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
-# noisy_image = sp_noise(selected_image, noise_density)
-
-# noisy_image = noisy_image[None,...]
-
-# st.write(selected_image.shape, noisy_image.shape)
-
-
 response = requests.get(selected_image)
 imageeee = np.asarray(Image.open(BytesIO(response.content)))
 
-#imageeee = np.asarray(Image.open('images/picker/15240.jpg'))
 noisy_imagee = sp_noise(imageeee,noise_density)
 
 noisy_imagee = noisy_imagee[None, ...]
 noisy_imagee = noisy_imagee / 255.0
 imageeee = imageeee[None,...]
 imageeee = imageeee / 255.0
-
-#images = np.array(images)
 
 col1, col2 = st.columns(2)
 with col1: 
@@ -141,6 +129,8 @@ with col2:
     st.write("Likeness:", '{:.4%}'.format(1 - mse_processed_original))
 
 st.divider()
+
+st.markdown("**Upload your own**")
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
