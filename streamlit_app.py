@@ -126,9 +126,9 @@ with col1:
     st.image(noisy_imagee)
     if stats_for_nerds:
         st.write(noisy_imagee.shape)
-    mse_1 = mse(imageeee, noisy_imagee)/100
-    st.write("Noisy vs. Original MSE:", mse_1)
-    st.write("Loss:", 1/mse_1)
+    mse_noisy_original = mse(imageeee, noisy_imagee)/100
+    st.write("Noisy vs. Original MSE:", mse_noisy_original)
+    st.write("Loss:", 1/mse_noisy_original)
 
 with col2:
     st.subheader("Cleaned Image")
@@ -136,7 +136,9 @@ with col2:
     st.image(prediction)
     if stats_for_nerds:
         st.write(prediction.shape)
-    st.write("Cleaned vs. Original MSE:", mse(imageeee, prediction)/100)
+    mse_processed_original = mse(imageeee, noisy_imagee)/100
+    st.write("Cleaned vs. Original MSE:", mse_processed_original)
+    st.write("Loss:", 1/mse_processed_original)
 
 st.divider()
 
