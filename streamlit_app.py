@@ -174,15 +174,7 @@ st.markdown("#### Noise Introduction")
 col5, col6 = st.columns([4,2], gap = "medium")
 with col5:
     st.write("Salt & pepper noise following a Gaussian distribution was introduced into copies of the training split.")
-
-with col6:
-    st.caption("Split dimensions")
-    st.write((2403, 256, 256, 3))
-    st.write((601, 256, 256, 3))
-    st.caption("Noise level")
-    st.write(0.1)
-
-st.code('''import random
+    st.code('''import random
 import cv2
 
 def sp_noise(image,prob):
@@ -198,6 +190,15 @@ def sp_noise(image,prob):
             else:
                 output[i][j] = image[i][j]
     return output''',language="python")
+
+with col6:
+    st.caption("Split dimensions")
+    st.write((2403, 256, 256, 3))
+    st.write((601, 256, 256, 3))
+    st.caption("Noise level")
+    st.write(0.1)
+
+
 st.write("[3]")
 st.image(image="images/content/clean_sample.png", caption="Clean Train Sample")
 st.image(image="images/content/noisy_sample.png", caption="Noisy Train Sample")
