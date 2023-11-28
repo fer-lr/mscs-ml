@@ -141,6 +141,7 @@ if uploaded_file is not None:
     resized = cv2.resize(opencv_image,dsize=(256,256), interpolation=cv2.INTER_CUBIC)
     resized = resized / 255
     custom_noisy = sp_noise(resized,0.1)
+    custom_noisy = custom_noisy[None,...]
 
     colA, colB, colC = st.columns(3)
     with colA:
