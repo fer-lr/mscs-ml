@@ -65,7 +65,7 @@ st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencod
 
 model = load_model("model/model200-2-15.keras")
 
-pickled_model = pickle.load(open('model/Model15.pkl', 'rb'))
+pickled_model = pickle.load(open('model/Model1500200.pkl', 'rb'))
 
 selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
