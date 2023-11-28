@@ -83,15 +83,15 @@ selected_image = image_select("256x256 celebrity faces sample", ["https://raw.gi
 
 noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
 
-req = urllib.request.urlopen(selected_image)
-arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
-selected_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
-selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
-noisy_image = sp_noise(selected_image, noise_density)
+# req = urllib.request.urlopen(selected_image)
+# arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+# selected_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
+# selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
+# noisy_image = sp_noise(selected_image, noise_density)
 
-noisy_image = noisy_image[None,...]
+# noisy_image = noisy_image[None,...]
 
-st.write(selected_image.shape, noisy_image.shape)
+# st.write(selected_image.shape, noisy_image.shape)
 
 
 response = requests.get(selected_image)
