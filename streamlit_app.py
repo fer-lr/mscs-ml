@@ -27,6 +27,8 @@ def sp_noise(image,prob):
     Add salt and pepper noise to image
     prob: Probability of the noise
     '''
+    if prob == 0:
+        return image
     output = np.zeros(image.shape,np.uint8)
     thres = 1 - prob 
     for i in range(image.shape[0]):
