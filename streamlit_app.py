@@ -201,6 +201,62 @@ with col6:
 
 st.image(image="images/content/clean_sample.png", caption="Clean Train Sample")
 st.image(image="images/content/noisy_sample.png", caption="Noisy Train Sample")
+
+st.markdown("#### The Model")
+
+with st.expander("Model as Table"):
+    st.text("""Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 256, 256, 3)]     0         
+                                                                 
+ conv2d (Conv2D)             (None, 256, 256, 64)      1792      
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 128, 128, 64)      0         
+ D)                                                              
+                                                                 
+ batch_normalization (Batch  (None, 128, 128, 64)      256       
+ Normalization)                                                  
+                                                                 
+ conv2d_1 (Conv2D)           (None, 128, 128, 32)      18464     
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 64, 64, 32)        0         
+ g2D)                                                            
+                                                                 
+ batch_normalization_1 (Bat  (None, 64, 64, 32)        128       
+ chNormalization)                                                
+                                                                 
+ conv2d_2 (Conv2D)           (None, 64, 64, 16)        4624      
+                                                                 
+ max_pooling2d_2 (MaxPoolin  (None, 32, 32, 16)        0         
+ g2D)                                                            
+                                                                 
+ conv2d_3 (Conv2D)           (None, 32, 32, 64)        9280      
+                                                                 
+ up_sampling2d (UpSampling2  (None, 64, 64, 64)        0         
+ D)                                                              
+                                                                 
+ conv2d_4 (Conv2D)           (None, 64, 64, 32)        18464     
+                                                                 
+ up_sampling2d_1 (UpSamplin  (None, 128, 128, 32)      0         
+ g2D)                                                            
+                                                                 
+ conv2d_5 (Conv2D)           (None, 128, 128, 16)      4624      
+                                                                 
+ up_sampling2d_2 (UpSamplin  (None, 256, 256, 16)      0         
+ g2D)                                                            
+                                                                 
+ conv2d_6 (Conv2D)           (None, 256, 256, 3)       435       
+                                                                 
+=================================================================
+Total params: 58067 (226.82 KB)
+Trainable params: 57875 (226.07 KB)
+Non-trainable params: 192 (768.00 Byte)
+_________________________________________________________________""")
+
+st.caption("Model plot:")
+st.image(image="images/content/model.png",caption="")
 st.divider()
 
 st.subheader("References")
