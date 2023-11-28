@@ -136,13 +136,13 @@ uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
     bytes_data = get_image_path(uploaded_file)
     uploaded_image = np.asarray(Image.open(uploaded_file))
-    #file_bytes = np.asarray(bytearray(uploaded_file.read()))
-    #opencv_image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-    #opencv_image = cv2.cvtColor(opencv_image , cv2.COLOR_BGR2RGB)
-    #resized = cv2.resize(opencv_image,dsize=(256,256), interpolation=cv2.INTER_CUBIC)
-    uploaded_image = uploaded_image / 255
     custom_noisy = sp_noise(uploaded_image,0.1)
+    
     custom_noisy = custom_noisy[None,...]
+    uploaded_image = uploaded_image[None,...]
+
+    uploaded_image = uploaded_image / 255.0
+    custom_noisy = custom_noisy /255.0
 
     colA, colB, colC = st.columns(3)
     with colA:
