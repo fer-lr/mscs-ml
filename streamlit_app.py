@@ -256,7 +256,7 @@ Non-trainable params: 192 (768.00 Byte)
 _________________________________________________________________""")
 
 st.caption("Model plot:")
-col7, col8, col9 = st.beta_columns([1,6,1])
+col7, col8, col9 = st.columns([1,6,1])
 
 with col1:
     st.write("")
