@@ -255,17 +255,8 @@ Trainable params: 57875 (226.07 KB)
 Non-trainable params: 192 (768.00 Byte)
 _________________________________________________________________""")
 
-st.caption("Model plot:")
-col7, col8, col9 = st.columns([1,6,1])
-
-with col7:
-    st.write("")
-
-with col8:
-    st.image(image="images/content/model.png",caption="")
-
-with col9:
-    st.write("")
+st.write("**Model plot:**")
+st.image(image="images/content/model.png",caption="")
 
 st.divider()
 
