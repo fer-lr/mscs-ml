@@ -267,7 +267,7 @@ with col8:
     st.caption("Model Output")
     st.write((None,256,256,3))
     st.caption("Latent Space (Max Compression)")
-    st.caption((None,32,32,16))
+    st.write((None,32,32,16))
 st.divider()
 
 st.subheader("References")
