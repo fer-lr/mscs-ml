@@ -134,7 +134,7 @@ st.markdown("**Upload your own**")
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
-    uploaded_noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
+    uploaded_noise_density = st.slider('Uploaded Noise density', 0.0, 1.0, 0.1)
     bytes_data = get_image_path(uploaded_file)
     uploaded_image = np.asarray(Image.open(uploaded_file).resize((256,256)))
     custom_noisy = sp_noise(uploaded_image,uploaded_noise_density)
