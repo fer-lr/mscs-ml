@@ -82,7 +82,7 @@ selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
 noisy_image = sp_noise(selected_image, noise_density)
 
 
-st.write(type(selected_image), type(noisy_image))
+st.write(selected_image.shape, noisy_image.shape)
 
 
 col1, col2 = st.columns(2)
