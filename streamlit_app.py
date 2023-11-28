@@ -57,15 +57,15 @@ if stats_for_nerds:
 
 md_intro = """*_Autoencoding_* is a data compression algorithm where the compression and decompression functions are:
 
-### Data-specific
+#### Data-specific
 
 Which means that they will only be able to compress data similar to what they have been trained on.
 
-### Lossy
+#### Lossy
 
 Which means that the decompressed outputs will be degraded compared to the original inputs
 
-### Learned automatically from examples rather than engineered by a human.
+#### Learned automatically (unsupervised)
 
 Which is a useful property: it means that it is easy to train specialized instances of the algorithm that will perform well on a specific type of input. It doesn't require any new engineering, just appropriate training data.
 
