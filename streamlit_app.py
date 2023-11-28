@@ -175,7 +175,7 @@ st.markdown("#### Image selection")
 col3, col4 = st.columns([6,2],gap="medium")
 
 with col3:
-    st.write("A sample of **3,004 256x256** images of celebrity faces from a bank of 30,000 was selected to train and validate the model.")
+    st.write("A sample of **3,004 256x256** images of celebrity faces from a bank of 30,000 was selected to train and validate the model. [2]")
 
 with col4:
     st.caption("Collection dimensions: ") 
@@ -304,3 +304,11 @@ with st.expander("**Training & exporting notes**"):
 st.divider()
 
 st.subheader("References")
+
+st.markdown("""[1] “Building Autoencoders in Keras.” Accessed: Nov. 28, 2023. [Online]. Available: https://blog.keras.io/building-autoencoders-in-keras.html
+            
+            [2] “CelebA-HQ resized (256x256).” Accessed: Nov. 28, 2023. [Online]. Available: https://www.kaggle.com/datasets/badasstechie/celebahq-resized-256x256
+            
+            [3] ppk28, “Answer to 'How to add noise (Gaussian/salt and pepper etc) to image in Python with OpenCV,'” Stack Overflow. Accessed: Nov. 28, 2023. [Online]. Available: https://stackoverflow.com/a/27342545
+
+            """)
