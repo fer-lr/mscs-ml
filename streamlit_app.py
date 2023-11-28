@@ -103,8 +103,8 @@ images = np.array(images)
 
 col1, col2 = st.columns(2)
 with col1: 
-    st.image(selected_image)
-    st.image(noisy_image)
+    st.image(imageeee)
+    st.image(noisy_imagee)
 
 with col2:
     prediction = pickled_model.predict(noisy_image)
