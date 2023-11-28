@@ -171,7 +171,7 @@ st.image(image="images/content/initial_sample.png", caption="Image Bank Sample")
 
 st.markdown("#### Noise Introduction")
 
-col5, col6 = st.columns([3,1], gap = "medium")
+col5, col6 = st.columns([4,2], gap = "medium")
 with col5:
     st.write("Salt & pepper noise following a Gaussian distribution was introduced into copies of the training split.")
 
