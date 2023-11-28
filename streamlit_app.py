@@ -14,9 +14,6 @@ import glob
 from PIL import Image
 import requests
 
-
-
-
 def get_image_path(img):
     # Create a directory and save the uploaded image.
     file_path = f"data/uploadedImages/{img.name}"
@@ -52,9 +49,13 @@ def mse(imageA, imageB):
 # def load_model(embed_size, loss_type):
 #     return loadPretrainedModel(embed_size, loss_type)
 
-st.title('Autoencode image denoiser')
+st.title('Autoencoder image denoiser')
 
-st.write(tf.__version__)
+stats_for_nerds = st.toggle('Stats for nerds')
+
+if stats_for_nerds:
+    st.write(f"{tf.__version__=}")
+    st.write(f"model: model_1500_400.keras")
 
 # # Using "with" notation
 # with st.sidebar:
@@ -66,7 +67,7 @@ st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencod
 
 model = load_model("model/model_1500_400.keras")
 
-pickled_model = pickle.load(open('model/model_1500_400.pkl', 'rb'))
+#pickled_model = pickle.load(open('model/model_1500_400.pkl', 'rb'))
 
 selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
@@ -108,16 +109,20 @@ col1, col2 = st.columns(2)
 with col1: 
     st.write("Noisy Image")
     st.image(noisy_imagee)
+    if stats_for_nerds:
+        st.write(st.write(noisy_imagee.shape))
+        st.write(f"Noisy vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
 
 with col2:
     st.write("Cleaned Image")
-    prediction = pickled_model.predict(noisy_imagee)
-    st.image(model.predict(noisy_imagee))
-    st.image(pickled_model.predict(noisy_imagee))
-    # st.write(prediction.shape)
+    prediction = model.predict(noisy_imagee)
+    st.image(prediction)
+    if stats_for_nerds:
+        st.write(st.write(prediction.shape))
+        st.write(f"Cleaned vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
 
 
-st.write(mse(imageeee, noisy_imagee)/100)
+
 
 
 
