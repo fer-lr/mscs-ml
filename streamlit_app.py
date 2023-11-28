@@ -63,7 +63,7 @@ st.write(tf.__version__)
 st.write("BRIEF DESCRIPTION")
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
-model = load_model("model/model200-2-15.keras")
+#model = load_model("model/model200-2-15.keras")
 
 pickled_model = pickle.load(open('model/Model1500200.pkl', 'rb'))
 
