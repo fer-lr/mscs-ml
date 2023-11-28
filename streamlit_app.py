@@ -111,8 +111,8 @@ with col1:
 with col2:
     st.write("Cleaned Image")
     prediction = pickled_model.predict(noisy_imagee)
-    st.write(prediction.shape)
     st.image(model.predict(noisy_imagee))
+    # st.write(prediction.shape)
 
 
 st.write(mse(imageeee, noisy_imagee)/100)
