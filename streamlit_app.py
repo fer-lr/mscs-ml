@@ -81,7 +81,7 @@ selected_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
 selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
 noisy_image = sp_noise(selected_image, noise_density)
 
-noisy_image = np.array(None + noisy_image)
+noisy_image = noisy_image[None,...]
 
 st.write(selected_image.shape, noisy_image.shape)
 
