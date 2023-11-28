@@ -159,7 +159,7 @@ st.divider()
 st.subheader("The process")
 st.caption("Image selection")
 
-col3, col4 = st.columns(2)
+col3, col4 = st.columns([3,1])
 
 with col3:
     st.write("A sample of **3,004 256x256** images of celebrity faces from a bank of 30,000 was selected to train and validate the model")
