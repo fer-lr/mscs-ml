@@ -41,6 +41,10 @@ def mse(imageA, imageB):
     err /= float(imageA.shape[0] * imageA.shape[1])
     return err
 
+# @st.cache_resource()
+# def load_model(embed_size, loss_type):
+#     return loadPretrainedModel(embed_size, loss_type)
+
 st.title('Autoencode image denoiser')
 
 
