@@ -95,7 +95,7 @@ noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
 
 
 response = requests.get(selected_image)
-imageeee = Image.open(BytesIO(response.content))
+imageeee = np.asarray(Image.open(BytesIO(response.content)))
 #imageeee = np.asarray(Image.open('images/picker/15240.jpg'))
 noisy_imagee = sp_noise(imageeee,noise_density)
 noisy_imagee = noisy_imagee[None, ...]
