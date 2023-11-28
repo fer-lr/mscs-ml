@@ -150,8 +150,13 @@ if uploaded_file is not None:
         st.image(uploaded_image)
     with colB:
         st.image(custom_noisy)
+        mse_noisy_uploaded = mse(uploaded_image, custom_noisy)/100
+        st.write("Likeness:", '{:.4%}'.format(1 - mse_noisy_uploaded))
     with colC:
-        st.image(model.predict(custom_noisy))
+        uploaded_processed = model.predict(custom_noisy)
+        st.image(uploaded_processed)
+        mse_processed_uploaded = mse(uploaded_image, uploaded_processed)/100
+        st.write("Likeness:", '{:.4%}'.format(1 - mse_processed_uploaded))
 
 st.divider()
 
