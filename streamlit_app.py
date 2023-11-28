@@ -7,6 +7,7 @@ import cv2
 from streamlit_image_select import image_select
 import urllib.request
 import random
+import tensorflow as tf
 from keras.models import load_model
 import pickle
 
@@ -50,6 +51,7 @@ def mse(imageA, imageB):
 
 st.title('Autoencode image denoiser')
 
+st.write(tf.__version__)
 
 # # Using "with" notation
 # with st.sidebar:
