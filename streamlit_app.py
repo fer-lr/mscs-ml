@@ -60,9 +60,9 @@ st.write(tf.__version__)
 st.write("BRIEF DESCRIPTION")
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
-# model = load_model("model/200_2.keras")
+model = load_model("model/200_2-15.keras")
 
-pickled_model = pickle.load(open('model/200_2.pkl', 'rb'))
+#pickled_model = pickle.load(open('model/200_2.pkl', 'rb'))
 
 selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
@@ -97,7 +97,7 @@ with col1:
     st.image(noisy_image)
 
 with col2:
-    st.image(pickled_model.predict(noisy_image))
+    st.image(model.predict(noisy_image))
 
 
 
