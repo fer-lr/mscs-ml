@@ -146,7 +146,7 @@ if uploaded_file is not None:
 
 st.divider()
 
-st.subheader("The process")
+st.header("The process")
 st.markdown("#### Image selection")
 
 col3, col4 = st.columns([6,2],gap="medium")
