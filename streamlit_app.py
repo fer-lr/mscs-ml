@@ -54,9 +54,6 @@ if stats_for_nerds:
     st.write(f"{tf.__version__=}")
     st.write(f"model: model_1500_400.keras")
 
-# # Using "with" notation
-# with st.sidebar:
-#     st.markdown("Hello world")
 
 md_intro = """*_Autoencoding_* is a data compression algorithm where the compression and decompression functions are:
 
@@ -69,6 +66,7 @@ md_intro = """*_Autoencoding_* is a data compression algorithm where the compres
 
 > Today two interesting practical applications of autoencoders are **data denoising** and **dimensionality reduction for data visualization**.
 """
+st.markdown(md_intro)
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
 model = load_model("model/model_1500_400.keras")
