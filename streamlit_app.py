@@ -71,7 +71,7 @@ Which means that the decompressed outputs will be degraded compared to the origi
 
 Which is a useful property: it means that it is easy to train specialized instances of the algorithm that will perform well on a specific type of input. It doesn't require any new engineering, just appropriate training data.
 
-**Today two interesting practical applications of autoencoders are data denoising and dimensionality reduction for data visualization.**
+**Today two interesting practical applications of autoencoders are data denoising and dimensionality reduction for data visualization.** [1]
 """
 st.markdown(md_intro)
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
