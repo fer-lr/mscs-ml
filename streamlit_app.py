@@ -1,4 +1,4 @@
-from io import StringIO
+from io import BytesIO, StringIO
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -11,7 +11,8 @@ import tensorflow as tf
 from keras.models import load_model
 import pickle
 import glob
-from PIL import Image 
+from PIL import Image
+import requests
 
 
 
@@ -93,7 +94,9 @@ noisy_image = noisy_image[None,...]
 st.write(selected_image.shape, noisy_image.shape)
 
 
-imageeee = np.asarray(Image.open('images/picker/15240.jpg'))
+response = requests.get(selected_image)
+imageeee = Image.open(BytesIO(response.content))
+#imageeee = np.asarray(Image.open('images/picker/15240.jpg'))
 noisy_imagee = sp_noise(imageeee,noise_density)
 noisy_imagee = noisy_imagee[None, ...]
 noisy_imagee = noisy_imagee / 255.0
