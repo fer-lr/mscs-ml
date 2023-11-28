@@ -95,8 +95,8 @@ st.write(selected_image.shape, noisy_image.shape)
 
 imageeee = np.asarray(Image.open('images/picker/15240.jpg'))
 noisy_imagee = sp_noise(imageeee,noise_density)
-noisy_images = np.asarray([noisy_imagee,])
-noisy_images = noisy_images / 255.0
+noisy_imagee = noisy_imagee[None, ...]
+noisy_imagee = noisy_imagee / 255.0
 
 #images = np.array(images)
 
@@ -106,7 +106,7 @@ with col1:
     st.image(noisy_images[0])
 
 with col2:
-    prediction = pickled_model.predict(noisy_image)
+    prediction = pickled_model.predict(noisy_imagee)
     st.write(prediction)
     st.write(prediction.shape)
     st.image(model.predict(noisy_imagee))
