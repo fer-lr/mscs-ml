@@ -107,14 +107,14 @@ noisy_imagee = noisy_imagee / 255.0
 
 col1, col2 = st.columns(2)
 with col1: 
-    st.write("Noisy Image")
+    st.subheader("Noisy Image")
     st.image(noisy_imagee)
     if stats_for_nerds:
         st.write(st.write(noisy_imagee.shape))
         st.write(f"Noisy vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
 
 with col2:
-    st.write("Cleaned Image")
+    st.subheader("Cleaned Image")
     prediction = model.predict(noisy_imagee)
     st.image(prediction)
     if stats_for_nerds:
