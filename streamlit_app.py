@@ -173,8 +173,11 @@ st.markdown("#### Noise Introduction")
 
 col4, col5 = st.columns(2,gap="medium") 
 
-st.write("Salt & pepper noise following a Gaussian distribution was introduced into copies of the training split.")
-st.code('''import random
+with col4:
+    st.write("Salt & pepper noise following a Gaussian distribution was introduced into copies of the training split.")
+
+with col5:
+    st.code('''import random
 import cv2
 
 def sp_noise(image,prob):
