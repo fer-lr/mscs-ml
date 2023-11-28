@@ -121,7 +121,7 @@ with col2:
         st.write(st.write(prediction.shape))
         st.write(f"Cleaned vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
 
----
+st.divider()
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
@@ -134,3 +134,7 @@ if uploaded_file is not None:
     # ReScale Values
     resized = resized / 255
     st.image(resized)
+
+st.divider()
+
+st.subheader("References")
