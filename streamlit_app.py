@@ -135,7 +135,7 @@ st.markdown("**Upload your own**")
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
     bytes_data = get_image_path(uploaded_file)
-    uploaded_image = np.asarray(Image.open(uploaded_file))
+    uploaded_image = np.asarray(Image.open(uploaded_file).resize(256,256))
     custom_noisy = sp_noise(uploaded_image,0.1)
     
     custom_noisy = custom_noisy[None,...]
