@@ -258,13 +258,13 @@ _________________________________________________________________""")
 st.caption("Model plot:")
 col7, col8, col9 = st.columns([1,6,1])
 
-with col1:
+with col7:
     st.write("")
 
-with col2:
+with col8:
     st.image(image="images/content/model.png",caption="")
 
-with col3:
+with col9:
     st.write("")
 
 st.divider()
