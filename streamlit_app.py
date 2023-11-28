@@ -124,20 +124,20 @@ col1, col2 = st.columns(2)
 with col1: 
     st.subheader("Noisy Image")
     st.image(noisy_imagee)
+    mse_noisy_original = mse(imageeee, noisy_imagee)/100
     if stats_for_nerds:
         st.write(noisy_imagee.shape)
-    mse_noisy_original = mse(imageeee, noisy_imagee)/100
-    st.write("Noisy vs. Original MSE:", mse_noisy_original)
-    st.write("Likeness:", 1 - mse_noisy_original)
+        st.write("Noisy vs. Original MSE:", mse_noisy_original)
+    st.write("Likeness:", '{:.4%}'.format(1 - mse_noisy_original))
 
 with col2:
     st.subheader("Cleaned Image")
     prediction = model.predict(noisy_imagee)
     st.image(prediction)
+    mse_processed_original = mse(imageeee, prediction)/100
     if stats_for_nerds:
         st.write(prediction.shape)
-    mse_processed_original = mse(imageeee, prediction)/100
-    st.write("Cleaned vs. Original MSE:", mse_processed_original)
+        st.write("Cleaned vs. Original MSE:", mse_processed_original)
     st.write("Likeness:", '{:.4%}'.format(1 - mse_processed_original))
 
 st.divider()
