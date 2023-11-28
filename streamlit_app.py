@@ -156,4 +156,12 @@ if uploaded_file is not None:
 
 st.divider()
 
+st.subheader("The process")
+st.caption("Image selection")
+
+st.write("A sample of 3,004 images of celebrity faces from a bank of 30,000 was selected to train and validate the model")
+if stats_for_nerds:
+    st.caption("Collection dimensions: ", (3004, 256, 256, 3))
+st.divider()
+
 st.subheader("References")
