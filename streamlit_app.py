@@ -138,7 +138,7 @@ with col2:
         st.write(prediction.shape)
     mse_processed_original = mse(imageeee, prediction)/100
     st.write("Cleaned vs. Original MSE:", mse_processed_original)
-    st.write("Likeness:", 1 - mse_processed_original)
+    st.write("Likeness:", '{:.4%}'.format(1 - mse_processed_original))
 
 st.divider()
 
