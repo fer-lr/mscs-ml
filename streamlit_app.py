@@ -299,7 +299,7 @@ st.image("images/content/validation_clean.png")
 
 with st.expander("**Training & exporting notes**"):
     st.markdown("""- Tensorflow 2.15.0 is almost 50 times slower than 2.14.0 on Google Collab
-    - To Export and Import models every workspace must have matching TensorFlow versions""")
+- To Export and Import models every workspace must have matching TensorFlow versions""")
 
 st.divider()
 
