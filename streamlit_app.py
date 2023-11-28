@@ -45,9 +45,9 @@ def mse(imageA, imageB):
     err /= float(imageA.shape[0] * imageA.shape[1])
     return err
 
-# @st.cache_resource()
-# def load_model(embed_size, loss_type):
-#     return loadPretrainedModel(embed_size, loss_type)
+@st.cache_resource()
+def load_model():
+     return load_model("model/model_1500_400.keras")
 
 st.title('Autoencoder image denoiser')
 
@@ -65,7 +65,7 @@ st.write("Autoencoding is a data compression algorithm where the compression and
 
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
-model = load_model("model/model_1500_400.keras")
+model = st.session_state["model"]
 
 #pickled_model = pickle.load(open('model/model_1500_400.pkl', 'rb'))
 
