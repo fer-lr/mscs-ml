@@ -10,6 +10,8 @@ import random
 import tensorflow as tf
 from keras.models import load_model
 import pickle
+import glob
+from PIL import Image 
 
 
 
@@ -91,6 +93,14 @@ noisy_image = noisy_image[None,...]
 st.write(selected_image.shape, noisy_image.shape)
 
 
+images = []
+
+imageeee = np.asarray(Image.open('images/picker/15240.jpg'))
+noisy_imagee = sp_noise(imageeee,noise_density)
+noisy_imagee = noisy_imagee[None,...]
+
+images = np.array(images)
+
 col1, col2 = st.columns(2)
 with col1: 
     st.image(selected_image)
@@ -100,7 +110,7 @@ with col2:
     prediction = pickled_model.predict(noisy_image)
     st.write(prediction)
     st.write(prediction.shape)
-    st.image(model.predict(noisy_image))
+    st.image(model.predict(noisy_imagee))
 
 
 
