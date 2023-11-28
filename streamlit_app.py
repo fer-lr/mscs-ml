@@ -276,6 +276,8 @@ with col8:
 st.markdown("#### Training the Model")
 
 st.write("The current model was trained for **200 Epochs*** in a _V100 High RAM Google Collab Space_")
+st.write("**Epoch Behaviour**")
+st.image("images/content/epochs.png")
 
 st.divider()
 
