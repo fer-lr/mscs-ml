@@ -7,6 +7,8 @@ import cv2
 from streamlit_image_select import image_select
 import urllib.request
 import random
+from keras.models import load_model
+
 
 
 
@@ -54,6 +56,8 @@ st.title('Autoencode image denoiser')
 
 st.write("BRIEF DESCRIPTION")
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
+
+model = load_model('./model/noise200.h5')
 
 selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
