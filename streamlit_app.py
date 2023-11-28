@@ -91,7 +91,7 @@ with col1:
     st.image(noisy_image)
 
 with col2:
-    st.image(model.predict(np.as_array(noisy_image)))
+    st.image(model.predict(np.array(noisy_image)))
 
 
 
