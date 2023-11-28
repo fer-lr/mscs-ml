@@ -159,11 +159,15 @@ st.divider()
 st.subheader("The process")
 st.caption("Image selection")
 
-st.write("A sample of **3,004 256x256** images of celebrity faces from a bank of 30,000 was selected to train and validate the model")
-if stats_for_nerds:
+col3, col4 = st.columns(2)
+
+with col3:
+    st.write("A sample of **3,004 256x256** images of celebrity faces from a bank of 30,000 was selected to train and validate the model")
+
+with col4:
     st.caption("Collection dimensions: ") 
     st.write((3004, 256, 256, 3))
-st.image("images/content/initial_sample.png")
+st.image(image="images/content/initial_sample.png", caption="Image B Sample")
 st.divider()
 
 st.subheader("References")
