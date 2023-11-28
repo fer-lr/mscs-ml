@@ -281,8 +281,8 @@ st.image("images/content/epochs.png")
 
 st.markdown("**Model Validation**")
 st.write("A sample of noisy images never seen by the model were used to validate it's ability to denoise them")
+st.image("images/content/validation_noisy.png")
 st.image("images/content/validation_clean.png")
-st.image("images/content")
 
 st.markdown("**Training & exporting notes**")
 st.markdown("""- Tensorflow 2.15.0 is almost 50 times slower than 2.14.0 on Google Collab
