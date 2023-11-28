@@ -159,7 +159,7 @@ st.divider()
 st.subheader("The process")
 st.markdown("#### Image selection")
 
-col3, col4 = st.columns([5,2],gap="medium")
+col3, col4 = st.columns([6,2],gap="medium")
 
 with col3:
     st.write("A sample of **3,004 256x256** images of celebrity faces from a bank of 30,000 was selected to train and validate the model.")
@@ -171,7 +171,7 @@ st.image(image="images/content/initial_sample.png", caption="Image Bank Sample")
 
 st.markdown("#### Noise Introduction")
 
-col5, col6 = st.columns([5,2], gap = "medium")
+col5, col6 = st.columns([6,2], gap = "medium")
 with col5:
     st.write("Salt & pepper noise following a Gaussian distribution was introduced into copies of the training split.")
     st.code('''import random
