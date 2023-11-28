@@ -268,6 +268,15 @@ with col8:
     st.write((None,256,256,3))
     st.caption("Latent Space (Max Compression)")
     st.write((None,32,32,16))
+    st.caption("Optimizer")
+    st.write("ADAM")
+    st.caption("Loss Function")
+    st.write("Mean Squared Error (MSE)")
+
+st.markdown("#### Training the Model")
+
+st.write("The current model was trained for **200 Epochs*** in a _V100 High RAM Google Collab Space_")
+
 st.divider()
 
 st.subheader("References")
