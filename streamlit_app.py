@@ -98,8 +98,8 @@ with col1:
 
 with col2:
     prediction = pickled_model.predict(noisy_image)
-    tf.write(prediction)
-    tf.write(prediction.shape)
+    st.write(prediction)
+    st.write(prediction.shape)
     st.image(pickled_model.predict(noisy_image))
 
 
