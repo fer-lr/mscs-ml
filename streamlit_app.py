@@ -163,6 +163,7 @@ st.write("A sample of **3,004 256x256** images of celebrity faces from a bank of
 if stats_for_nerds:
     st.caption("Collection dimensions: ") 
     st.write((3004, 256, 256, 3))
+st.image("images/content/initial_sample.png")
 st.divider()
 
 st.subheader("References")
