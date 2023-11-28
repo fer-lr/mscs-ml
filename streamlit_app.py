@@ -103,7 +103,7 @@ response = requests.get(selected_image)
 selected_image = Image.open(BytesIO(response.content)).resize((256,256))
 if stats_for_nerds:
     st.write(selected_image.size)
-selected_image_array = np.asarray()
+selected_image_array = np.asarray(selected_image)
 
 noisy_imagee = sp_noise(selected_image_array,noise_density)
 
