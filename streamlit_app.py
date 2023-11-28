@@ -190,14 +190,14 @@ def sp_noise(image,prob):
             else:
                 output[i][j] = image[i][j]
     return output''',language="python")
+    st.write("[3]")
 
 with col6:
     st.caption("Split dimensions")
     st.write((2403, 256, 256, 3))
     st.write((601, 256, 256, 3))
-    st.caption("Noise level")
+    st.caption("Training Noise level")
     st.write(0.1)
-    st.write("[3]")
 
 st.image(image="images/content/clean_sample.png", caption="Clean Train Sample")
 st.image(image="images/content/noisy_sample.png", caption="Noisy Train Sample")
