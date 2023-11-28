@@ -88,6 +88,9 @@ with col1:
     st.image(selected_image)
     st.image(noisy_image)
 
+with col2:
+    st.image(model.predict(noisy_image))
+
 
 
 st.write(mse(selected_image, noisy_image)/100)
