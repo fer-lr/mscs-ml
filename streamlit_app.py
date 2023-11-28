@@ -128,7 +128,7 @@ with col2:
     st.image(prediction)
     if stats_for_nerds:
         st.write(prediction.shape)
-        st.write("Cleaned vs. Original MSE:", mse(imageeee, noisy_imagee)/100)
+        st.write("Cleaned vs. Original MSE:", mse(imageeee, prediction)/100)
 
 st.divider()
 
