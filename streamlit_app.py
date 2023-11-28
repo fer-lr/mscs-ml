@@ -135,7 +135,7 @@ st.markdown("**Upload your own**")
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
     bytes_data = get_image_path(uploaded_file)
-    uploaded_image = np.asarray(Image.open(bytearray(uploaded_file.read())))
+    uploaded_image = np.asarray(Image.open(uploaded_file))
     #file_bytes = np.asarray(bytearray(uploaded_file.read()))
     #opencv_image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     #opencv_image = cv2.cvtColor(opencv_image , cv2.COLOR_BGR2RGB)
