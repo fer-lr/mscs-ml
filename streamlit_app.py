@@ -103,20 +103,20 @@ response = requests.get(selected_image)
 selected_image = Image.open(BytesIO(response.content)).resize((256,256))
 if stats_for_nerds:
     st.write(selected_image.size)
-imageeee = np.asarray()
+selected_image_array = np.asarray()
 
-noisy_imagee = sp_noise(imageeee,noise_density)
+noisy_imagee = sp_noise(selected_image_array,noise_density)
 
 noisy_imagee = noisy_imagee[None, ...]
 noisy_imagee = noisy_imagee / 255.0
-imageeee = imageeee[None,...]
-imageeee = imageeee / 255.0
+selected_image_array = selected_image_array[None,...]
+selected_image_array = selected_image_array / 255.0
 
 col1, col2 = st.columns(2)
 with col1: 
     st.subheader("Noisy Image")
     st.image(noisy_imagee)
-    mse_noisy_original = mse(imageeee, noisy_imagee)/100
+    mse_noisy_original = mse(selected_image_array, noisy_imagee)/100
     if stats_for_nerds:
         st.write(noisy_imagee.shape)
         st.write("Noisy vs. Original MSE:", mse_noisy_original)
@@ -126,7 +126,7 @@ with col2:
     st.subheader("Processed Image")
     prediction = model.predict(noisy_imagee)
     st.image(prediction)
-    mse_processed_original = mse(imageeee, prediction)/100
+    mse_processed_original = mse(selected_image_array, prediction)/100
     if stats_for_nerds:
         st.write(prediction.shape)
         st.write("Cleaned vs. Original MSE:", mse_processed_original)
