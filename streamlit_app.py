@@ -63,7 +63,7 @@ st.write(tf.__version__)
 st.write("BRIEF DESCRIPTION")
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
-model = load_model("model/model_1500_400.keras")
+model = load_model("model/model200-2-15.keras")
 
 pickled_model = pickle.load(open('model/Model15.pkl', 'rb'))
 
@@ -112,7 +112,7 @@ with col2:
     st.write("Cleaned Image")
     prediction = pickled_model.predict(noisy_imagee)
     st.image(model.predict(noisy_imagee))
-    st.image(pickled_model.predict(noisy_imagee))
+    st.image(pickled_model.predict())
     # st.write(prediction.shape)
 
 
