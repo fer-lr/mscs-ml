@@ -122,7 +122,7 @@ with col2:
         st.write(f"Cleaned vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
 
 
-st.divider()
+st.markdown("---")
 
 uploaded_file = st.file_uploader("Choose an image",type=['jpg'])
 if uploaded_file is not None:
