@@ -119,7 +119,7 @@ with col1:
     st.subheader("Noisy Image")
     st.image(noisy_imagee)
     if stats_for_nerds:
-        st.write(st.write(noisy_imagee.shape))
+        st.write(noisy_imagee.shape)
         st.write(f"Noisy vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
 
 with col2:
@@ -127,8 +127,8 @@ with col2:
     prediction = model.predict(noisy_imagee)
     st.image(prediction)
     if stats_for_nerds:
-        st.write(st.write(prediction.shape))
-        st.write(f"Cleaned vs. Original MSE: {mse(imageeee, noisy_imagee)/100}")
+        st.write(prediction.shape)
+        st.write("Cleaned vs. Original MSE:", mse(imageeee, noisy_imagee)/100)
 
 st.divider()
 
