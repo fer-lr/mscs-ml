@@ -313,4 +313,4 @@ st.markdown("""[1] “Building Autoencoders in Keras.” Accessed: Nov. 28, 2023
 
 st.divider()
 
-st.markdown("[Link to original jupyter notebook]()")
+st.markdown("[Link to original jupyter notebook](https://github.com/fer-lr/mscs-ml/blob/main/streamlit_app.py)")
