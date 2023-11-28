@@ -105,16 +105,17 @@ noisy_imagee = noisy_imagee / 255.0
 
 col1, col2 = st.columns(2)
 with col1: 
+    st.write("Noisy Image")
     st.image(noisy_imagee)
 
 with col2:
+    st.write("Cleaned Image")
     prediction = pickled_model.predict(noisy_imagee)
     st.write(prediction.shape)
     st.image(model.predict(noisy_imagee))
 
 
-
-st.write(mse(selected_image, noisy_imagee)/100)
+st.write(mse(imageeee, noisy_imagee)/100)
 
 
 
