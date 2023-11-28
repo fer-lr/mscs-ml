@@ -97,6 +97,7 @@ selected_image = image_select("256x256 celebrity faces sample", ["https://raw.gi
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/moon_2.jpeg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/cherry.jpeg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/tonka.jpeg",
+                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/jet.jpeg",
                                         ])
 
 noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
