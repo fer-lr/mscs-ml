@@ -177,7 +177,8 @@ with col5:
 
 with col6:
     st.caption("Split dimensions")
-    st.write((2403, 256, 256, 3),(601, 256, 256, 3))
+    st.write((2403, 256, 256, 3))
+    st.write((601, 256, 256, 3))
     st.caption("Noise level")
     st.write(0.1)
 
