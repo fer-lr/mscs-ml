@@ -57,7 +57,7 @@ st.title('Autoencode image denoiser')
 st.write("BRIEF DESCRIPTION")
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
-model = load_model("model/noise200.hdf5")
+model = load_model("model/noise200.hdf5", compile=False)
 
 selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
@@ -79,8 +79,10 @@ req = urllib.request.urlopen(selected_image)
 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
 selected_image = cv2.imdecode(arr, cv2.IMREAD_COLOR)
 selected_image = cv2.cvtColor(selected_image , cv2.COLOR_BGR2RGB)
-noisy_image = sp_noise(arr, noise_density)
+noisy_image = sp_noise(selected_image, noise_density)
 
+
+st.write(type(selected_image), type(noisy_image))
 
 
 col1, col2 = st.columns(2)
