@@ -255,9 +255,17 @@ Trainable params: 57875 (226.07 KB)
 Non-trainable params: 192 (768.00 Byte)
 _________________________________________________________________""")
 
-st.write("**Model plot:**")
-st.image(image="images/content/model.png",caption="")
+col7, col8 = st.columns([5,2], gap = "medium")
 
+with col7:
+    st.write("**Model plot:**")
+    st.image(image="images/content/model.png",caption="")
+
+with col8:
+    st.caption("Model Input")
+    st.write((None,256,256,3))
+    st.caption("Model Output")
+    st.write((None,256,256,3))
 st.divider()
 
 st.subheader("References")
