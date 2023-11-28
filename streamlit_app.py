@@ -146,7 +146,7 @@ if uploaded_file is not None:
 
     colA, colB, colC = st.columns(3)
     with colA:
-        st.image(resized)
+        st.image(uploaded_image)
     with colB:
         st.image(custom_noisy)
     with colC:
