@@ -57,7 +57,7 @@ st.title('Autoencode image denoiser')
 st.write("BRIEF DESCRIPTION")
 st.image("https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/autoencoder_schema.jpg")
 
-model = load_model("model/noise200.keras")
+model = load_model("model/200_2.keras")
 
 selected_image = image_select("256x256 celebrity faces sample", ["https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15240.jpg",
                                         "https://raw.githubusercontent.com/fer-lr/mscs-ml/main/images/picker/15241.jpg",
