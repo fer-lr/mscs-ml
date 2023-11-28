@@ -100,7 +100,10 @@ selected_image = image_select("256x256 celebrity faces sample", ["https://raw.gi
 noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
 
 response = requests.get(selected_image)
-imageeee = np.asarray(Image.open(BytesIO(response.content)).resize((256,256)))
+selected_image = Image.open(BytesIO(response.content)).resize((256,256))
+if stats_for_nerds:
+    st.write(selected_image.shape)
+imageeee = np.asarray()
 
 noisy_imagee = sp_noise(imageeee,noise_density)
 
