@@ -97,6 +97,9 @@ with col1:
     st.image(noisy_image)
 
 with col2:
+    prediction = pickled_model.predict(noisy_image)
+    tf.write(prediction)
+    tf.write(prediction.shape)
     st.image(pickled_model.predict(noisy_image))
 
 
