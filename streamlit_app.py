@@ -310,3 +310,7 @@ st.markdown("""[1] “Building Autoencoders in Keras.” Accessed: Nov. 28, 2023
 [2] “CelebA-HQ resized (256x256).” Accessed: Nov. 28, 2023. [Online]. Available: https://www.kaggle.com/datasets/badasstechie/celebahq-resized-256x256
 
 [3] ppk28, “Answer to 'How to add noise (Gaussian/salt and pepper etc) to image in Python with OpenCV,'” Stack Overflow. Accessed: Nov. 28, 2023. [Online]. Available: https://stackoverflow.com/a/27342545""")
+
+st.divider()
+
+st.markdown("[Link to original jupyter notebook]()")
