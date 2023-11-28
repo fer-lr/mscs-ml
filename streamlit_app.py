@@ -157,7 +157,7 @@ if uploaded_file is not None:
 st.divider()
 
 st.subheader("The process")
-st.caption("Image selection")
+st.markdown("#### Image selection")
 
 col3, col4 = st.columns([3,1],gap="medium")
 
@@ -167,7 +167,31 @@ with col3:
 with col4:
     st.caption("Collection dimensions: ") 
     st.write((3004, 256, 256, 3))
-st.image(image="images/content/initial_sample.png", caption="Image B Sample")
+st.image(image="images/content/initial_sample.png", caption="Image Bank Sample")
+
+st.markdown("#### Noise Introduction")
+
+col4, col5 = st.columns(2,gap="medium") 
+
+st.write("Salt & pepper noise following a Gaussian distribution was introduced into copies of the training split.")
+st.code('''import random
+import cv2
+
+def sp_noise(image,prob):
+    output = np.zeros(image.shape,np.uint8)
+    thres = 1 - prob 
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            rdn = random.random()
+            if rdn < prob:
+                output[i][j] = 0
+            elif rdn > thres:
+                output[i][j] = 255
+            else:
+                output[i][j] = image[i][j]
+    return output''', language="python")
+
+st.write("[3]")
 st.divider()
 
 st.subheader("References")
