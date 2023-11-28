@@ -102,7 +102,7 @@ noise_density = st.slider('Noise density', 0.0, 1.0, 0.1)
 response = requests.get(selected_image)
 selected_image = Image.open(BytesIO(response.content)).resize((256,256))
 if stats_for_nerds:
-    st.write(selected_image.shape)
+    st.write(selected_image.size)
 imageeee = np.asarray()
 
 noisy_imagee = sp_noise(imageeee,noise_density)
