@@ -13,6 +13,7 @@ import pickle
 import glob
 from PIL import Image
 import requests
+from math import log10, sqrt 
 
 def get_image_path(img):
     # Create a directory and save the uploaded image.
@@ -47,6 +48,14 @@ def mse(imageA, imageB):
     err /= float(imageA.shape[0] * imageA.shape[1])
     return err
 
+def PSNR(original, compressed): 
+    mse = np.mean((original - compressed) ** 2) 
+    if(mse == 0):  # MSE is zero means no noise is present in the signal . 
+                  # Therefore PSNR have no importance. 
+        return 100
+    max_pixel = 255.0
+    psnr = 20 * log10(max_pixel / sqrt(mse)) 
+    return psnr 
 
 st.title('Autoencoder image denoiser')
 
@@ -159,13 +168,13 @@ if uploaded_file is not None:
         st.image(uploaded_image)
     with colB:
         st.image(custom_noisy)
-        mse_noisy_uploaded = mse(uploaded_image, custom_noisy)/100
-        st.write("Likeness:", '{:.4%}'.format(1 - mse_noisy_uploaded))
+        mse_noisy_uploaded = PSNR(uploaded_image, custom_noisy)
+        st.write("PSNR:", '{:.4%}'.format(1 - mse_noisy_uploaded))
     with colC:
         uploaded_processed = model.predict(custom_noisy)
         st.image(uploaded_processed)
-        mse_processed_uploaded = mse(uploaded_image, uploaded_processed)/100
-        st.write("Likeness:", '{:.4%}'.format(1 - mse_processed_uploaded))
+        mse_processed_uploaded = PSNR(uploaded_image, uploaded_processed)
+        st.write("PSNR:", '{:.4%}'.format(1 - mse_processed_uploaded))
 
 st.divider()
 
