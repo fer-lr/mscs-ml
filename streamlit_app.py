@@ -168,13 +168,13 @@ if uploaded_file is not None:
         st.image(uploaded_image)
     with colB:
         st.image(custom_noisy)
-        mse_noisy_uploaded = PSNR(uploaded_image, custom_noisy)
-        st.write("PSNR:", '{:.4%}'.format(1 - mse_noisy_uploaded))
+        psnr_noisy_uploaded = PSNR(uploaded_image, custom_noisy)
+        st.write("PSNR:", '{:.4%}'.format( psnr_noisy_uploaded))
     with colC:
         uploaded_processed = model.predict(custom_noisy)
         st.image(uploaded_processed)
-        mse_processed_uploaded = PSNR(uploaded_image, uploaded_processed)
-        st.write("PSNR:", '{:.4%}'.format(1 - mse_processed_uploaded))
+        psnr_processed_uploaded = PSNR(uploaded_image, uploaded_processed)
+        st.write("PSNR:", '{:.4%}'.format(psnr_processed_uploaded))
 
 st.divider()
 
