@@ -55,7 +55,7 @@ def PSNR(original, compressed):
         return 100
     max_pixel = 255.0
     psnr = 20 * log10(max_pixel / sqrt(mse)) 
-    return psnr 
+    return psnr / 100
 
 st.title('Autoencoder image denoiser')
 
